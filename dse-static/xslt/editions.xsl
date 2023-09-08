@@ -53,6 +53,7 @@
                     <div class="container-fluid">                        
                         <div class="card" data-index="true">
                             <div class="card-header">
+								<xsl:apply-templates select=".//tei:header"></xsl:apply-templates>
                                 <div class="row">
                                     <div class="col-md-2 col-lg-2 col-sm-12">
                                         <xsl:if test="ends-with($prev,'.html')">
@@ -96,6 +97,12 @@
                             </div>
                             <div class="card-body">                                
                                 <xsl:apply-templates select=".//tei:body"></xsl:apply-templates>
+								<xsl:apply-templates select=".//tei:msDesc"></xsl:apply-templates>
+								<xsl:apply-templates select=".//tei:msIdentifier"></xsl:apply-templates>
+								<xsl:apply-templates select=".//tei:msContents"></xsl:apply-templates>
+								<xsl:apply-templates select=".//tei:physDesc"></xsl:apply-templates>
+								<xsl:apply-templates select=".//tei:history"></xsl:apply-templates>
+								<xsl:apply-templates select=".//tei:additional"></xsl:apply-templates>
                             </div>
                             <div class="card-footer">
                                 <p style="text-align:center;">
@@ -146,5 +153,43 @@
         <div id="{local:makeId(.)}">
             <xsl:apply-templates/>
         </div>
-    </xsl:template>  
+    </xsl:template>
+	
+	
+	<xsl:template match="tei:msDesc">
+        <div id="{local:makeId(.)}">
+        </div>
+    </xsl:template>
+	<xsl:template match="tei:msIdentifier">
+        <div id="{local:makeId(.)}">
+		<xsl:for-each select="./*">
+		<p><xsl:value-of select="."/></p>
+		</xsl:for-each>
+        </div>
+    </xsl:template>
+		<xsl:template match="tei:msContents">
+        <div id="{local:makeId(.)}">
+		<xsl:value-of select="."/>
+        </div>
+    </xsl:template>
+	
+	<xsl:template match="tei:physDesk">
+        <div id="{local:makeId(.)}">
+		<xsl:value-of select="."/>
+        </div>
+    </xsl:template>
+	
+	<xsl:template match="tei:history">
+        <div id="{local:makeId(.)}">
+		<xsl:value-of select="."/>
+        </div>
+    </xsl:template>
+	
+	<xsl:template match="tei:additional">
+        <div id="{local:makeId(.)}">
+		<xsl:value-of select="."/>
+        </div>
+    </xsl:template>
+	
+	
 </xsl:stylesheet>
