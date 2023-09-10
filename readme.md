@@ -6,7 +6,7 @@ Sincerely,
 Michaela Rausch-Supola
 
 ## GitHub pages
-https://rausch-supola.github.io/acdh-cookiecutter/dse-static/html/
+https://rausch-supola.github.io/cookiecutter/dse-static/html/
 
 ## Environment and programs used
 - Ubuntu 20.04.6 LTS on a Windows (10) computer  
