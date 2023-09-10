@@ -1,5 +1,5 @@
 # Welcome to my submission
-This repository contains the code for the Assessment Task "Static Website using dse-static-cookiecutter (August 2023)".  
+This repository contains the code for the Assessment Task "Static Website using dse-static-cookiecutter".  
 I hope you will enjoy the content.  
   
 Sincerely,  
